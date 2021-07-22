@@ -1,0 +1,151 @@
+                                        body,
+                                        ul,
+                                        li,
+                                        p {
+                                            margin: 0px;
+                                            padding: 0px;
+                                            list-style: none;
+                                            /*Com o list style tira-se a "bolinha" que é criada na listagem*/
+                                            font-size: 1.2rem;
+                                            font-family: Verdana, Geneva, Tahoma, sans-serif;
+                                        }
+                                        
+                                        body {
+                                            margin-bottom: 100px;
+                                        }
+                                        
+                                        a {
+                                            text-decoration: none;
+                                            /*É tirado o sublinhamento por exemplo*/
+                                            color: white;
+                                        }
+                                        
+                                        .tituloproduto {
+                                            color: rgb(148, 91, 5);
+                                        }
+                                        
+                                        .work {
+                                            color: rgb(148, 91, 5);
+                                        }
+                                        
+                                        .quintal {
+                                            display: block;
+                                            width: 200px;
+                                            height: 200px;
+                                            padding-bottom: none;
+                                        }
+                                        
+                                        img {
+                                            max-width: 100%;
+                                            height: 300px;
+                                            /*Foi colocado para que as imagens possam se expandir ao seu máx. 100%*/
+                                            display: block;
+                                        }
+                                        
+                                        .header {
+                                            background: black;
+                                            color: white;
+                                            display: flex;
+                                            /* Coloca um item de um lado(Logo) e o outro(Lista de navegação) do outro lado, por exemplo. 
+    Funciona com o "justify-content: space-between  */
+                                            justify-content: space-between;
+                                            padding: none;
+                                            /*É dada uma margem do canto para o elemento*/
+                                            flex-wrap: wrap;
+                                            align-items: center;
+                                            /*Colocado para alinhar a logo e os demais itens*/
+                                        }
+                                        
+                                        .menu {
+                                            display: flex;
+                                            /*Irá colocar cada item um do lado do outro*/
+                                        }
+                                        
+                                        .menu li {
+                                            margin-left: 10px;
+                                            /*Foi criado este menu para poder dar espaço entre os itens*/
+                                        }
+                                        
+                                        .menu li a {
+                                            /*Este ponto é muito importante, pois irá acessar o elemento*/
+                                            display: block;
+                                            /*"O display: block"Faz com que o elemento HTML seja renderizado como bloco,*/
+                                            padding: 10px;
+                                            /*/*É dada uma margem do canto para o elemento, ou seja, ele irá descer*/
+                                            background: rgb(209, 129, 8);
+                                        }
+                                        /*CSS FLEXBOX*/
+                                        
+                                        h1 {
+                                            text-align: center;
+                                            margin-top: 100px;
+                                        }
+                                        
+                                        .flex {
+                                            display: flex;
+                                            /*Esta section com o "display: flex" coloca cada imagem uma do lado da outra*/
+                                            flex-wrap: wrap;
+                                            /*flex-wrap: 
+nowrap >> não irá quebrar a linha
+rap >> quebra a linha
+wrap-reverse quebra a linha da última imagem para a primeira */
+                                            max-width: 800px;
+                                            /*Foi colocado este max-width com o margin: 0 auto 
+            para quando passar de 800px manter ele;*/
+                                            margin: 0 auto;
+                                        }
+                                        
+                                        .flex>div {
+                                            flex: 1 1 200px;
+                                            margin: 10px;
+                                        }
+                                        /*1 para expandir
+1 para retroceder a expansão
+200px base, caso não consiga ter esta base irá quebrar.
+colocar um tamanho mínimo para cada imagem*/
+                                        /*------------------------------------------------------*/
+                                        /*CSS GRID 1*/
+                                        
+                                        .grid1 {
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr 1fr;
+                                            /*Dividido em 3 unid. fracionárias, ou seja, 3 colunas | pode utilizar também "repeat(3,fr)*/
+                                            max-width: 780px;
+                                            margin: 0 auto;
+                                            grid-gap: 20px;
+                                        }
+                                        
+                                        .grid1>div:nth-child(n + 4) {
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr;
+                                            grid-gap: 10px;
+                                            align-items: center;
+                                        }
+                                        /*Ao utilizar o ".grid>div:nth-child(x), 
+            irá localizar a div por numeração, podendo realizar a formatação*/
+                                        /*A opção (n+4) serve para que a partir do n item aplique a formatação.*/
+                                        
+                                        .grid1>div.anuncio {
+                                            grid-column: 1;
+                                            /*Aqui estou colocando o anuncio na primeira coluna*/
+                                            grid-row: 2 / 6;
+                                            /*Aqui será colocado o anúnio entre a 2 e 6 linha*/
+                                            border-top: 10px solid tomato;
+                                            display: block;
+                                        }
+                                        /*PARA DEIXAR O SITE RESPONSIVO*/
+                                        
+                                      
+                                            
+
+                                            .grid1>div:nth-child(n + 4) {
+                                                display: block;
+                                                /*Ao colocar o display:block toda a formatação
+                        não conseguirá ser aplicada*/
+                                            }
+                                            .grid1>div.anuncio {
+                                                grid-column: auto;
+                                                grid-row: auto;
+                                                order: -1;
+                                            }
+                                        
